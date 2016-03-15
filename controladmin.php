@@ -28,7 +28,7 @@ if(isset($mod)){
     
     if($mod == 'admin'){        
         if($acc == "log"){
-            include("control/admin/log.php");
+            include("controladmin/admin/log.php");
         }          
     }
 
