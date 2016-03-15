@@ -20,18 +20,14 @@ if($mod!=''){
                 
           		                
                 $sql ="SELECT id_administrador,password FROM administrador WHERE email = '$email'";
-                
-                $rs = mysqli_query($sql,$conn);
-	            $validado = false;
-		        while($row = mysqli_fetch_row($rs)){
-                    if($row[1] == md5($pass)){
-                            $validado     = true;
-                            $_SESSION['id_usuario'] = $row[0];
-                            echo "Entro";
-                            exit();
-                    }
+                /* Consultas de selección que devuelven un conjunto de resultados */
+                if ($resultado = mysqli_query($conn, $sql)) {
+                    printf("La selección devolvió %d filas.\n", mysqli_num_rows($resultado));
+
+                    /* liberar el conjunto de resultados */
+                    mysqli_free_result($resultado);
                 }
-                
+
                 exit();
                 if($validado){
                     echo "Acceso correcto";
