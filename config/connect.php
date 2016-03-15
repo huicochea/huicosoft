@@ -9,7 +9,7 @@
     
     if(mysqli_connect_errno())
     {
-    echo '<p>Verbindung zum MySQL Server fehlgeschlagen: '.mysqli_connect_error().'</p>';
+    echo '<p>Error al conectar a la base de datos: '.mysqli_connect_error().'</p>';
     }
     else
     {

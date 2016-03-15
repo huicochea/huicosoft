@@ -11,8 +11,6 @@ if(!empty($_POST['mod']) && !empty($_POST['acc'])){
 }
 include("config/connect.php");
 
-echo "Modulo".$mod;
-exit();
 if($mod!=''){
     if($mod == 'log'){
         if(isset($acc)){
@@ -26,7 +24,7 @@ if($mod!=''){
                 $rs = mysql_query($sql,$conn);
 	            $validado = false;
 		        while($row = mysql_fetch_row($rs)){
-                    if($row[1] == $pass){
+                    if($row[1] == md5($pass)){
                             $validado     = true;
                             $_SESSION['id_usuario'] = $row[0];
                             echo "Entro";
