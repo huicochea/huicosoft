@@ -36,6 +36,7 @@ if($mod!=''){
                 }
                 if($validado){
                     echo"<script type='text/javascript'>
+                            alert('Acceso correcto');
                             window.location='admin.php';
                         </script>";
                 }else{
