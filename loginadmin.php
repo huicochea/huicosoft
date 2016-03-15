@@ -33,6 +33,7 @@ if($mod!=''){
                     }
                 }
                 
+                exit();
                 if($validado){
                     echo "Acceso correcto";
                 }else{
