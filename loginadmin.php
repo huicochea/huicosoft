@@ -21,9 +21,9 @@ if($mod!=''){
           		                
                 $sql ="SELECT id_administrador,password FROM administrador WHERE email = '$email'";
                 
-                $rs = mysql_query($sql,$conn);
+                $rs = mysqli_query($sql,$conn);
 	            $validado = false;
-		        while($row = mysql_fetch_row($rs)){
+		        while($row = mysqli_fetch_row($rs)){
                     if($row[1] == md5($pass)){
                             $validado     = true;
                             $_SESSION['id_usuario'] = $row[0];
