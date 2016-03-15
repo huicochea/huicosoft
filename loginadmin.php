@@ -5,13 +5,14 @@ session_start();
 //error_reporting(0);
 error_reporting(E_ALL);
 
-if(!isset($_POST['mod']) && !isset($_POST['acc'])){
+if(!empty($_POST['mod']) && !empty($_POST['acc'])){
     $mod = $_POST['mod'];
     $acc = $_POST['acc'];
 }
 include("config/connect.php");
 
-
+echo "Modulo".$mod;
+exit();
 if($mod!=''){
     if($mod == 'log'){
         if(isset($acc)){
