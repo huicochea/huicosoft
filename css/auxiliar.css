@@ -1,0 +1,55 @@
+/*--  estilos auxiliares  --*/
+/*banner de imagenes*/
+img-control{
+   background-color: transparent;
+   padding: 5px;
+}
+.img-control img{
+   min-height: 70px;
+   max-height: 70px;
+   height: 70px;
+   width: 70px;
+   padding: 3px;
+}
+/*/banner de imagenes*/
+
+/*previene que el autocompletado este atras del modal*/
+.ui-dialog{
+position:absolute;
+top:70px;
+left:600px;
+z-index:100000;
+}
+.ui-widget-overlay{
+z-index:102;
+}
+
+.my_link{
+ color: #0099ff;
+ text-decoration: underline;
+}
+.my_link:hover{
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+.btn-file input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
