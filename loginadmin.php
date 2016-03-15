@@ -22,12 +22,18 @@ if($mod!=''){
                 $sql ="SELECT id_administrador,password FROM administrador WHERE email = '$email'";
                 /* Consultas de selección que devuelven un conjunto de resultados */
                 if ($resultado = mysqli_query($conn, $sql)) {
-                    printf("La selección devolvió %d filas.\n", mysqli_num_rows($resultado));
-
+                    if(mysqli_num_rows($resultado)>0)
+                    {
+                        while ($row = mysqli_fetch_row($resultado)) {
+                            if($row[1] == md5($pass)){
+                                $id_administrador = $row[0];    
+                            }
+                        }
+                    }
                     /* liberar el conjunto de resultados */
                     mysqli_free_result($resultado);
                 }
-
+                echo $id_administrador;
                 exit();
                 if($validado){
                     echo "Acceso correcto";
